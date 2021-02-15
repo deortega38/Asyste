@@ -1,0 +1,71 @@
+.ui-widget {
+    font-size: 12px !important;
+}
+.ui-layout-north {
+    z-index: 20 !important;
+    overflow: visible !important;;
+}
+.ui-layout-north .ui-layout-unit-content {
+    overflow: visible !important;
+}
+.ui-widget-header {
+    text-align: center;
+    text-transform: uppercase;
+}
+.ui-button {
+    margin-top: 10px !important;
+}
+
+.proyecto_titulo{
+    text-align: center;
+}
+
+.proyecto_subtitulo{
+    margin: 0;
+    text-align: center;
+    color: grey;
+
+}
+.box1{
+    margin-top: 5%;
+    margin-left: 25%;
+    align-content: center;
+    padding: 10px;
+    float: left;
+    height: 300px;
+    width: 25%;
+    background-color: limegreen;
+    elevation: lower;
+    border-radius: 10px;
+    box-shadow: 0px 0px 5px 1px grey;
+    background-image: url("login.jpg");
+
+}
+
+.box{
+    margin-top: 5%;
+    margin-left: 40%;
+    align-content: center;
+    padding: 10px;
+    float: left;
+    height: 300px;
+    width: 20%;
+    elevation: lower;
+    box-shadow: 10px 0px 10px 5px dimgray;
+    border-radius: 10px;
+
+}
+
+#usuario{
+    margin-top: 10px;
+}
+
+.btn-iniciar{
+    padding: 500px;
+    height: 100%;
+}
+
+
+
+
+

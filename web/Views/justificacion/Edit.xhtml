@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="JustificacionEditDlg" widgetVar="JustificacionEditDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.EditJustificacionTitle}">
+            <h:form id="JustificacionEditForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{justificacionController.selected != null}">
+                        <p:outputLabel value="#{bundle.EditJustificacionLabel_idJustifcaion}" for="idJustifcaion" />
+                        <p:inputText id="idJustifcaion" value="#{justificacionController.selected.idJustifcaion}" title="#{bundle.EditJustificacionTitle_idJustifcaion}" required="true" requiredMessage="#{bundle.EditJustificacionRequiredMessage_idJustifcaion}"/>
+                        <p:outputLabel value="#{bundle.EditJustificacionLabel_fecha}" for="fecha" />
+                        <p:calendar id="fecha" pattern="MM/dd/yyyy" value="#{justificacionController.selected.fecha}" title="#{bundle.EditJustificacionTitle_fecha}" required="true" requiredMessage="#{bundle.EditJustificacionRequiredMessage_fecha}" showOn="button"/>
+                        <p:outputLabel value="#{bundle.EditJustificacionLabel_descripcion}" for="descripcion" />
+                        <p:inputText id="descripcion" value="#{justificacionController.selected.descripcion}" title="#{bundle.EditJustificacionTitle_descripcion}" required="true" requiredMessage="#{bundle.EditJustificacionRequiredMessage_descripcion}"/>
+                        <p:outputLabel value="#{bundle.EditJustificacionLabel_evidencia}" for="evidencia" />
+                        <p:inputText id="evidencia" value="#{justificacionController.selected.evidencia}" title="#{bundle.EditJustificacionTitle_evidencia}" required="true" requiredMessage="#{bundle.EditJustificacionRequiredMessage_evidencia}"/>
+                        <p:outputLabel value="#{bundle.EditJustificacionLabel_asistenciaidAsistencia}" for="asistenciaidAsistencia" />
+                        <p:selectOneMenu id="asistenciaidAsistencia" value="#{justificacionController.selected.asistenciaidAsistencia}" required="true" requiredMessage="#{bundle.EditJustificacionRequiredMessage_asistenciaidAsistencia}">
+                            <f:selectItem itemLabel="#{bundle.SelectOneMessage}"/>
+                            <f:selectItems value="#{asistenciaController.itemsAvailableSelectOne}"
+                                           var="asistenciaidAsistenciaItem"
+                                           itemValue="#{asistenciaidAsistenciaItem}"/>
+                        </p:selectOneMenu>
+                        <p:outputLabel value="#{bundle.EditJustificacionLabel_eventoidEvento}" for="eventoidEvento" />
+                        <p:selectOneMenu id="eventoidEvento" value="#{justificacionController.selected.eventoidEvento}" required="true" requiredMessage="#{bundle.EditJustificacionRequiredMessage_eventoidEvento}">
+                            <f:selectItem itemLabel="#{bundle.SelectOneMessage}"/>
+                            <f:selectItems value="#{eventoController.itemsAvailableSelectOne}"
+                                           var="eventoidEventoItem"
+                                           itemValue="#{eventoidEventoItem}"/>
+                        </p:selectOneMenu>
+                    </p:panelGrid>
+                    <p:commandButton actionListener="#{justificacionController.update}" value="#{bundle.Save}" update="display,:JustificacionListForm:datalist,:growl" oncomplete="handleSubmit(args, 'JustificacionEditDialog');"/>
+                    <p:commandButton value="#{bundle.Cancel}" onclick="JustificacionEditDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

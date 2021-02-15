@@ -1,0 +1,72 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Facelet Title</title>
+        <h:outputStylesheet name="css/jsfcrud.css"/>
+    </h:head>
+    <h:body>
+        <ui:composition template="templateindex.xhtml">
+            <ui:define name="login">
+                <!--contenido
+                Hello from Facelets
+                <br />
+                <h:link outcome="welcomePrimefaces" value="Primefaces welcome page" />
+                <br />
+                <h:link outcome="/Views/asistencia/List" value="Show All Asistencia Items"/>
+                <br />
+                <h:link outcome="/Views/ciudad/List" value="Show All Ciudad Items"/>
+                <br />
+                <h:link outcome="/Views/estado/List" value="Show All Estado Items"/>
+                <br />
+                <h:link outcome="/Views/evento/List" value="Show All Evento Items"/>
+                <br />
+                <h:link outcome="/Views/ficha/List" value="Show All Ficha Items"/>
+                <br />
+                <h:link outcome="/Views/jornada/List" value="Show All Jornada Items"/>
+                <br />
+                <h:link outcome="/Views/justificacion/List" value="Show All Justificacion Items"/>
+                <br />
+                <h:link outcome="/Views/modalidad/List" value="Show All Modalidad Items"/>
+                <br />
+                <h:link outcome="/Views/municipio/List" value="Show All Municipio Items"/>
+                <br />
+                <h:link outcome="/Views/niveldeformacion/List" value="Show All Niveldeformacion Items"/>
+                <br />
+                <h:link outcome="/Views/persona/List" value="Show All Persona Items"/>
+                <br />
+                <h:link outcome="/Views/programa/List" value="Show All Programa Items"/>
+                <br />
+                <h:link outcome="/Views/rol/List" value="Show All Rol Items"/>
+                <br />
+                <h:link outcome="/Views/tipodedocumento/List" value="Show All Tipodedocumento Items"/>
+                <br />
+                <h:link outcome="/Views/tipodeusuario/List" value="Show All Tipodeusuario Items"/>
+                <br />
+                <h:link outcome="/Views/usuario/List" value="Show All Usuario Items"/>-->
+                <!--<div class="box1"></div>-->
+                <div class="box">
+                    <h3 id="title_login">Iniciar sesión</h3>
+                    <h:form>
+                    <h:panelGrid columns="1">
+                        <p:outputLabel for="usuario" value="Usuario"/>
+                        <p:inputText id="usuario" required="true"/>
+                        <p:outputLabel for="contraseña" value="Contraseña" />
+                        <p:inputText  id="contraseña" required="true"/>
+                        <h:message for="usuario"/>
+                        <p:column/>
+                        <p:commandButton class="btn-iniciar" icon="ui-icon-key" value="Iniciar" style="color: pink;"/>
+                    </h:panelGrid>
+                    <p:separator/>
+                    <h:link value="Crear cuenta" outcome="index" style="color: red;"/>
+                </h:form>
+                </div>
+            </ui:define>
+        </ui:composition>
+    </h:body>
+
+</html>
+

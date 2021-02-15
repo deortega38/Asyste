@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="EventoCreateDlg" widgetVar="EventoCreateDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.CreateEventoTitle}">
+            <h:form id="EventoCreateForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{eventoController.selected != null}">
+                        <p:outputLabel value="#{bundle.CreateEventoLabel_idEvento}" for="idEvento" />
+                        <p:inputText id="idEvento" value="#{eventoController.selected.idEvento}" title="#{bundle.CreateEventoTitle_idEvento}" required="true" requiredMessage="#{bundle.CreateEventoRequiredMessage_idEvento}"/>
+                        <p:outputLabel value="#{bundle.CreateEventoLabel_nombre}" for="nombre" />
+                        <p:inputText id="nombre" value="#{eventoController.selected.nombre}" title="#{bundle.CreateEventoTitle_nombre}" />
+                    </p:panelGrid>
+                    <p:commandButton actionListener="#{eventoController.create}" value="#{bundle.Save}" update="display,:EventoListForm:datalist,:growl" oncomplete="handleSubmit(args,'EventoCreateDialog');"/>
+                    <p:commandButton value="#{bundle.Cancel}" onclick="EventoCreateDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>
